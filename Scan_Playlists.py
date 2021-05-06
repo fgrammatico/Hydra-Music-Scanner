@@ -24,13 +24,14 @@ def scan_playlists(SPOTIPY_CLIENT_ID,SPOTIPY_CLIENT_SECRET,SPOTIPY_USER):
             playlistID = playlist['id']
             response = clientDynamo.get_item(
                 Key = {
-                    '26MuX4iyxKcYv3kUzqolJo' : {
-                        'S' : '5678',
+                    playlistID : {
+                        'S' : '35U4PXL3W3XIkAjEUdhr36',
                         },
                         },
-                TableName = 'Thievery.And.Holiday',
+                TableName = playlistName,
                 )
-            print (playlistName)
+            # print (playlistName + ' ' + playlistID)
+            print (response)
 
         if playlists['next']:
             playlists = sp.next(playlists)
